@@ -21,5 +21,9 @@ fn main() -> anyhow::Result<()> {
     let mut plugins: Vec<Box<dyn Plugin>> = Vec::new();
     plugins.push(Box::new(LoggerPlugin));
     plugins.push(Box::new(AnalyticsPlugin));
+
+    for plugin in plugins {
+        plugin.run();
+    }
     Ok(())
 }

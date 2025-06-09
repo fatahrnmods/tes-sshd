@@ -18,8 +18,8 @@ impl Plugin for AnalyticsPlugin {
 }
 
 fn main() -> anyhow::Result<()> {
-    let mut plugins: Vec<dyn Plugin> = Vec::new();
-    plugins.push(LoggerPlugin);
-    plugins.push(AnalyticsPlugin);
+    let mut plugins: Vec<Box<dyn Plugin>> = Vec::new();
+    plugins.push(Box::new(LoggerPlugin));
+    plugins.push(Box::new(AnalyticsPlugin));
     Ok(())
 }

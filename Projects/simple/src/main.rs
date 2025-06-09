@@ -23,7 +23,7 @@ impl Describable for Magazine {
 }
 
 fn main() {
-    let items = vec![
+    let items: Vec<impl Describable> = vec![
         Book { title: String::from("Rust Book") },
         Magazine { name: String::from("Rust Monthly") },
     ];

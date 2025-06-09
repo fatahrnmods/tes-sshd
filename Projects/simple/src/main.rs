@@ -23,9 +23,9 @@ impl Describable for Magazine {
 }
 
 fn main() {
-    let items: Vec<impl Describable> = vec![
-        Book { title: String::from("Rust Book") },
-        Magazine { name: String::from("Rust Monthly") },
+    let items: Vec<Box<dyn Describable>> = vec![
+        Box::new(Book { title: String::from("Rust Book") }),
+        Box::new(Magazine { name: String::from("Rust Monthly") }),
     ];
 
     for item in items {
